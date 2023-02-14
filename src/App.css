@@ -1,38 +1,128 @@
-.App {
+body {
+  width: 100vw;
+  height: auto;
+  background-color: black;
+  color: white;
+}
+
+.option-selection-div {
   text-align: center;
+  padding: 2vh 20vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 20px;
+  margin-top: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 15px;
+  transition: all 0.4s linear;
+  cursor: pointer;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.box:hover {
+  background-color: white;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.translation {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 2vh 20vw; */
+  margin-top: 100px;
+}
+
+.translation > * {
+  margin: 20px;
+}
+
+.text-area {
+  background-color: gainsboro;
+  /* resize: none; */
+  outline: none;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 20px;
+  width: 40%;
+  /* height: 15%; */
+}
+
+.btn {
+  border: 0;
+  outline: none;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  /* margin-top: 20px; */
+  transition: all 0.2s linear;
+  cursor: pointer;
+  color: black;
+}
+
+.btn:hover {
+  box-shadow: 0px 0px 8px white;
+}
+
+.result-div {
+  background-color: gray;
+  color: white;
+  width: 40%;
+  height: auto;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.go-back-btn {
+  position: fixed;
+  top: 2%;
+  left: 5%;
+}
+
+/* media query for screen size less than 1000px */
+@media screen and (max-width: 1000px) {
+  .option-selection-div {
+    text-align: center;
+    padding: 2vh 10vw;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* media query for screen size less than 750px */
+@media screen and (max-width: 750px) {
+  .text-area {
+    width: 60%;
+  }
+
+  .result-div {
+    width: 60%;
+  }
+}
+
+/* media query for screen size less than 450px */
+@media screen and (max-width: 450px) {
+  .boxes {
+    grid-template-columns: repeat(1, auto);
+  }
+
+  .text-area {
+    width: 80%;
+  }
+
+  .result-div {
+    width: 80%;
   }
 }
